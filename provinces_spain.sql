@@ -1,22 +1,18 @@
 /**
- * Provincias
- *  2013-02-01
- * Font: http://www.ine.es/daco/daco42/codmun/cod_provincia.htm
+ * Provinces Spain
+ * 14-03-2015
+ * Source: http://www.ine.es/daco/daco42/codmun/cod_provincia.htm
  */
 
-CREATE TABLE IF NOT EXISTS `provincias` (
-  `provincia_id` int(11) NOT NULL,
-  `comunidad_id` tinyint(4) default NULL,
-  `nom_provincia` varchar(45) default NULL,
-  PRIMARY KEY  (`provincia_id`),
-  KEY `comunidad_id` (`comunidad_id`)
+CREATE TABLE IF NOT EXISTS `provinces_spain` (
+  `id` int(11) NOT NULL,
+  `community_id` tinyint(4) default NULL,
+  `name` varchar(45) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `community_id` (`community_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Bolcant dades de la taula `provincias`
---
-
-INSERT INTO `provincias` (`provincia_id`, `comunidad_id`, `nom_provincia`) VALUES
+INSERT INTO `provinces_spain` (`id`, `community_id`, `name`) VALUES
 (1, 16, 'Araba/Álava'),
 (2, 8, 'Albacete'),
 (3, 10, 'Alicante/Alacant'),
@@ -70,12 +66,5 @@ INSERT INTO `provincias` (`provincia_id`, `comunidad_id`, `nom_provincia`) VALUE
 (51, 18, 'Ceuta'),
 (52, 19, 'Melilla');
 
---
--- Restriccions per taules bolcades
---
-
---
--- Restriccions per la taula `provincias`
---
-ALTER TABLE `provincias`
-  ADD CONSTRAINT `provincias_ibfk_1` FOREIGN KEY (`comunidad_id`) REFERENCES `comunidades` (`id_comunidad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `provinces_spain` ADD CONSTRAINT `provinces_spain_ibfk_1` FOREIGN KEY (`community_id`) 
+REFERENCES `autonomous_communities_spain` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
