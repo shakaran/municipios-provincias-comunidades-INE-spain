@@ -1,24 +1,16 @@
 /**
- * Comunitats autonomes
- *  2013-02-01
- * Font: http://www.ine.es/daco/daco42/codmun/cod_ccaa.htm
+ * Autonomous Communities Spain
+ * 14-03-2015
+ * Source: http://www.ine.es/daco/daco42/codmun/cod_ccaa.htm
  */
 
---
--- Estructura de la taula `comunidades`
---
-
-CREATE TABLE IF NOT EXISTS `comunidades` (
-  `id_comunidad` tinyint(4) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  UNIQUE KEY `id_comunidad` (`id_comunidad`)
+CREATE TABLE IF NOT EXISTS `autonomous_communities_spain` (
+  `id` tinyint(4) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Bolcant dades de la taula `comunidades`
---
-
-INSERT INTO `comunidades` (`id_comunidad`, `nombre`) VALUES
+INSERT INTO `autonomous_communities_spain` (`id`, `name`) VALUES
 (1, 'Andalucía'),
 (2, 'Aragón'),
 (3, 'Asturias, Principado de'),
@@ -38,4 +30,3 @@ INSERT INTO `comunidades` (`id_comunidad`, `nombre`) VALUES
 (17, 'Rioja, La'),
 (18, 'Ceuta'),
 (19, 'Melilla');
-
