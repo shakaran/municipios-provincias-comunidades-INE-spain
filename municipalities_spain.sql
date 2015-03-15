@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `municipalities_spain` (
   `name` varchar(45) default NULL,
   PRIMARY KEY  (`id`),
   KEY `fk_municipalities_spain1` (`province_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8117 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8119 ;
 
 INSERT INTO `municipalities_spain` VALUES(0,1,1,4,'Alegría-Dulantzi');
 INSERT INTO `municipalities_spain` VALUES(1,1,2,9,'Amurrio');
@@ -8135,7 +8135,6 @@ INSERT INTO `municipalities_spain` VALUES(8115,50,297,3,'Zaragoza');
 INSERT INTO `municipalities_spain` VALUES(8116,50,298,9,'Zuera');
 INSERT INTO `municipalities_spain` VALUES(8117,51,1,3,'Ceuta');
 INSERT INTO `municipalities_spain` VALUES(8118,52,1,8,'Melilla');
-CREATE INDEX ix_municipalities_spain_index ON municipalities_spain ("index");
 
-ALTER TABLE `municipalities_spain`
-  ADD CONSTRAINT `municipalities_spain_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `provinces_spain` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ALTER TABLE `municipalities_spain`
+--  ADD CONSTRAINT `municipalities_spain_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `provinces_spain` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
